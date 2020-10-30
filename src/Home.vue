@@ -7,14 +7,23 @@
           :small="small"
           :large="large"
           :xlarge="xlarge"
+          :tile="tile"
+          :rounded="rounded"
+          :circle="circle"
         >点我呀</UIButton>
       </div>
       <div class="btn-group">
-        <UIButton @click="resize('xsmall')">超小</UIButton>
-        <UIButton @click="resize('small')">小</UIButton>
-        <UIButton @click="resize('normal')">正常</UIButton>
-        <UIButton @click="resize('large')">大</UIButton>
-        <UIButton @click="resize('xlarge')">超大</UIButton>
+        <UIButton class="btn" @click="resize('xsmall')">超小</UIButton>
+        <UIButton class="btn" @click="resize('small')">小</UIButton>
+        <UIButton class="btn" @click="resize('normal')">正常</UIButton>
+        <UIButton class="btn" @click="resize('large')">大</UIButton>
+        <UIButton class="btn" @click="resize('xlarge')">超大</UIButton>
+      </div>
+      <div class="btn-group">
+        <UIButton class="btn" @click="changeRadius('tile')">矩形</UIButton>
+        <UIButton class="btn" @click="changeRadius('normal')">正常</UIButton>
+        <UIButton class="btn" @click="changeRadius('rounded')">半圆</UIButton>
+        <UIButton class="btn" @click="changeRadius('circle')">超大</UIButton>
       </div>
     </div>
 </template>
@@ -36,6 +45,9 @@ export default class App extends Vue {
   private small = false;
   private large = false;
   private xlarge = false;
+  private tile = false;
+  private rounded = false;
+  private circle = false;
 
   private resize(name: string) {
     switch (name) {
@@ -75,6 +87,29 @@ export default class App extends Vue {
     }
   }
 
+  private changeRadius(name: string) {
+    switch (name) {
+      case 'tile':
+        this.tile = true;
+        this.rounded = false;
+        this.circle = false;
+        break;
+      case 'rounded':
+        this.tile = false;
+        this.rounded = true;
+        this.circle = false;
+        break;
+      case 'circle':
+        this.tile = false;
+        this.rounded = false;
+        this.circle = true;
+        break;
+    
+      default:
+        break;
+    }
+  }
+
   private onClick (e: MouseEvent) {
     console.log(e)
   }
@@ -92,4 +127,14 @@ export default class App extends Vue {
   display flex
   justify-content center
   align-items center
+  margin 0 auto
+
+.btn-group
+  text-align center
+  margin-bottom 15px
+
+.btn
+  display inline-block
+  margin-right 15px
+
 </style>
