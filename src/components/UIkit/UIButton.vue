@@ -45,40 +45,37 @@ export default class App extends Vue {
 </script>
 
 <style scoped lang="stylus">
-resize(minWidth, height, paddingLR, fontSize) {
-	min-width: minWidth,
-	height: height,
-	padding: 0 paddingLR,
-	font-size: fontSize,
+resize(minWidth,height,paddingLR,fontSize) {
+  min-width: minWidth,
+  height: height,
+  padding: 0 paddingLR,
+  font-size: fontSize,
 }
 .ui-btn {
-	min-width 64px
-	height 36px
-	padding 0 16px
-	border 0 solid black
-	border-radius 4px
-	font-size 0.875rem
-	font-weight 500
-	letter-spacing 0.09em
-	outline none
-	background-color #2D8CF0
-	cursor pointer
-	user-select none
+  min-width 64px
+  height 36px
+  padding 0 16px
+  border 0 solid black
+  border-radius 4px
+  font-size 0.875rem
+  font-weight 500
+  letter-spacing 0.09em
+  outline none
+  background-color #2D8CF0
+  cursor pointer
+  user-select none
 }
 .ui-btn-xsmall {
-	resize(36px, 20px, 9px, 0.625rem)
+  resize(36px,20px,9px,0.625rem)
 }
-  
 .ui-btn-small {
-	resize(50px, 28px, 12px, 0.75rem)
+  resize(50px, 28px, 12px, 0.75rem)
 }
-  
 .ui-btn-large {
-	resize(78px, 44px, 19px, 0.875rem)
+  resize(78px, 44px, 19px, 0.875rem)
 }
-  
 .ui-btn-xlarge {
-	resize(92px, 52px, 23px, 1rem)
+  resize(92px, 52px, 23px, 1rem)
 }
 </style>
 
